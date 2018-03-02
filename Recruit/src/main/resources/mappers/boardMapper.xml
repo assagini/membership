@@ -7,8 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
  <insert id="create">
- insert into tbl_board (title, content, writer) 
- values(#{title},#{content}, #{writer})
+ insert into tbl_board (id, pw, pname, birth, email) 
+ values(#{id},#{pw}, #{pname}, #{birth}, #{email})
  </insert>
  
  </mapper>

@@ -4,54 +4,44 @@ import java.util.Date;
 
 public class BoardVO {
 	
-	private Integer bno;
-	private String title;
-	private String content;
-	private String writer;
-	private Date regdate;
-	private int viewcnt;
+	private String id;
+	private String pw;
+	private String pname;
+	private String email;
+	private String birth;
 	
-	public Integer getBno() {
-		return bno;
+	public String getId() {
+		return id;
 	}
-	public void setBno(Integer bno) {
-		this.bno = bno;
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getTitle() {
-		return title;
+	public String getPw() {
+		return pw;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
-	public String getContent() {
-		return content;
+	public String getPname() {
+		return pname;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
-	public String getWriter() {
-		return writer;
+	public String getEmail() {
+		return email;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public String getBirth() {
+		return birth;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
-	}
-	public int getViewcnt() {
-		return viewcnt;
-	}
-	public void setViewcnt(int viewcnt) {
-		this.viewcnt = viewcnt;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [bno=" + bno + ", title=" + title + ", content="
-				+ content + ", writer=" + writer + ", regdate=" + regdate
-				+ ", viewcnt=" + viewcnt + "]";
+		return "PinfoVO [id=" + id + ", pw=" + pw + ", pname=" + pname + ", email=" + email + ", birth=" + birth + "]";
 	}
-
 }

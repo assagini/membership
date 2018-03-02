@@ -82,6 +82,7 @@ public class rController {
 		return "rpjt/C_favor";
 	}
 	
+	//지훈이가 짜준거
 	@RequestMapping(value = "/joinperson", method = RequestMethod.POST)
 	public String joinPost(BoardVO board, RedirectAttributes rttr) throws Exception {
 	    logger.info("regist post ...........");
@@ -90,6 +91,6 @@ public class rController {
 	    service.regist(board);
 
 	    rttr.addFlashAttribute("msg", "success");
-	    return "redirect:/board/listAll";
+	    return "redirect:/rpjt/index";
 	}
 }

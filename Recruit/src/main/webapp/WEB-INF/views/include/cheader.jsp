@@ -105,14 +105,14 @@
 
 								<!--___id나오는 부분-->
 								<div class="form-group">
-									아이디<input type="text" name='title' class="form-control"
+									아이디<input type="text" name='id' class="form-control"
 										placeholder="4~10자리를 입력하세요.">
 								</div>
 
 
 								<!--___password나오는 부분 -->
 								<div class="form-group">
-									비밀번호<input type="password" name='content' class="form-control"
+									비밀번호<input type="password" name='pw' class="form-control"
 										placeholder="6자리를 입력하세요.">
 								</div>
 
@@ -120,21 +120,21 @@
 
 								<!--___이름 나오는 부분-->
 								<div class="form-group">
-									이름<input type="text" name='writer' class="form-control"
+									이름<input type="text" name='pname' class="form-control"
 										placeholder="이름을 입력하세요.">
 								</div>
 
 
 								<!--___생년월일 나오는 부분-->
 								<div class="form-group">
-									생년월일<input type="text" name='' class="form-control"
+									생년월일<input type="text" name='birth' class="form-control"
 										placeholder="생년월일 폼 적용">
 								</div>
 
 
 								<!--___이메일 나오는 부분-->
 								<div class="form-group has-feedback">
-									이메일<input type="text" name="uid" class="form-control"
+									이메일<input type="text" name="email" class="form-control"
 										placeholder="이메일을 입력하세요. 예) iampeel@naver.com" /> <span
 										class="glyphicon  form-control-feedback"></span>
 								</div>
