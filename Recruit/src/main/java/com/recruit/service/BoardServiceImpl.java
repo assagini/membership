@@ -16,6 +16,8 @@ public class BoardServiceImpl implements BoardService {
 
   @Override
   public void regist(BoardVO board) throws Exception {
+	  System.out.println("3");
     dao.create(board);
+    System.out.println("6");
   }
 }

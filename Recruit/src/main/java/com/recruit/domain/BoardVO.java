@@ -1,7 +1,5 @@
 package com.recruit.domain;
 
-import java.util.Date;
-
 public class BoardVO {
 	
 	private String id;
@@ -9,7 +7,6 @@ public class BoardVO {
 	private String pname;
 	private String email;
 	private String birth;
-	
 	public String getId() {
 		return id;
 	}
@@ -42,6 +39,8 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "PinfoVO [id=" + id + ", pw=" + pw + ", pname=" + pname + ", email=" + email + ", birth=" + birth + "]";
+		return "BoardVO [id=" + id + ", pw=" + pw + ", pname=" + pname + ", email=" + email + ", birth=" + birth + "]";
 	}
+	
+	
 }
