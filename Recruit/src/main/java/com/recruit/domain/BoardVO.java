@@ -4,8 +4,10 @@ public class BoardVO {
 	
 	private String id;
 	private String pw;
+	private String cname;
 	private String pname;
 	private String email;
+	private String registnum;
 	private String birth;
 	public String getId() {
 		return id;
@@ -19,6 +21,12 @@ public class BoardVO {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
 	public String getPname() {
 		return pname;
 	}
@@ -31,6 +39,12 @@ public class BoardVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getRegistnum() {
+		return registnum;
+	}
+	public void setRegistnum(String registnum) {
+		this.registnum = registnum;
+	}
 	public String getBirth() {
 		return birth;
 	}
@@ -39,8 +53,8 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [id=" + id + ", pw=" + pw + ", pname=" + pname + ", email=" + email + ", birth=" + birth + "]";
+		return "BoardVO [id=" + id + ", pw=" + pw + ", cname=" + cname + ", pname=" + pname + ", email=" + email
+				+ ", registnum=" + registnum + ", birth=" + birth + "]";
 	}
-	
 	
 }

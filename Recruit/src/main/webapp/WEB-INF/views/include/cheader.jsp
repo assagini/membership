@@ -62,9 +62,13 @@
 					<li><a href="#">인재찾기</a></li>
 					<li><a href="#">검색</a></li>
 
+<!-- 
+<li><button type="button" class="btn btn-default btn-lg"
+							id="myBtn_join">회원가입</button></li> -->
+
 					<!--___2.버튼추가  -->
-					<li><button type="button" class="btn btn-default btn-lg"
-							id="myBtn_join">회원가입</button></li>
+					<li id="myBtn_join"><a href="#"> <span class="glyphicon glyphicon-user"></span>
+							회원가입
 					<li><a href="#"> <span class="glyphicon glyphicon-log-in"></span>
 							로그인
 					</a></li>
@@ -82,12 +86,80 @@
 
 
 
-	<!--______________________회원가입 폼______________________________________  -->
-	<!--___modal fade  -->
+	<!--_______________________________________회원가입 모달 시작_______________________________________-->
+	
+	
+	<!--  
+	구현하기 까지 과정
+	1.
+	src/main/java폴더의 com.recruit.domain패키지에
+	BoardVO 클래스를 생성한다.
+	아이디나 패스워드등등 코드를 보면 id라는 부분이 보인다.
+	id속성값을 BoardVO에 변수로 선언한다.	
+	
+	2.
+	src/main/java폴더의 com.recruit.persistence패키지에
+	인터페이스 BoardDAO를 생성 
+	create 메소드를 선언한다.
+	
+	3. 
+	src/main/java폴더의 com.recruit.persistence패키지에
+	BoardDAOImpl 클래스를 생성 
+	BoardDAO를 구현한다.
+	
+	4.
+	scr/main/resource폴더 아래 mappers폴더에 
+	boardMapper.xml을 생성
+	1번을 토대로 작성
+	namespace라는 게 있는데 그건 3번에서 쓰임
+	-->
+	
+	
+	
+	
+	<!--
+	모달창  해야 할 것들
+	1.정가운데 배치
+	-->
+	
+	
+	<!--
+	개인회원 해야 할 것들
+	1. 아이디 4자리 미만 경고
+	2. 아이디 10자리 넘어서 입력 못하게
+	3. 비밀번호 6자리 미만 경고
+	4. 비밀번호 6자리 넘어서 입력 못하게
+	5. 이메일 인증
+	-->
+	
+	
+	<!--
+	기업회원 해야 할 것들
+	1. 아이디 4자리 미만 경고
+	2. 아이디 10자리 넘어서 입력 못하게
+	3. 비밀번호 6자리 미만 경고
+	4. 비밀번호 6자리 넘어서 입력 못하게
+	5. 이메일 인증
+	6. 사업자 등록 번호 숫자만 입력하게
+	7. 사업자 등록 번호 인증
+	-->
+	
+	
+	
+	
+	
+	
+	
+	<!--여기 써 있는 id값이 맨 밑에 자바 스크립트 부분에서 사용됨/ 회원가입 모달 시작 -->
 	<div class="modal fade" id="modal_join" role="dialog">
+	
+	    <!--뭔지 모르겠지만 없애면 왼쪽에 붙고, 가로폭도 조절이 안됨  -->
 		<div class="modal-dialog">
+		
+			<!--col-xs-8을 써서 모달 가로 폭을 조정했음  -->
 			<div class="login-box-body col-xs-8">
 
+				<!--모달 안에서 맨 위에 있는 네비게이션  -->
 				<ul class="nav nav-tabs">
 					<li class="active"><a data-toggle="tab" href="#join_person">개인회원</a></li>
 					<li><a data-toggle="tab" href="#join_company">기업회원</a></li>
@@ -95,186 +167,177 @@
 
 				<br>
 
+				<!--모달 안에 들어가는 내용  -->
 				<div class="tab-content">
 
-					<!--___join_person  -->
+					<!--_____________________개인 회원 시작 _____________________ -->
+					<!--개인회원 내용  -->
 					<div id="join_person" class="tab-pane fade in active">
 						<form role="form" action="joinperson" method="post">
 
+							<!--뭔지 모르겠지만 box-body를 빼면 전체 틀이 약간 구려짐  -->
 							<div class="box-body">
 
-								<!--___id나오는 부분-->
+								<!--아이디 -->
 								<div class="form-group">
 									아이디<input type="text" name='id' class="form-control"
 										placeholder="4~10자리를 입력하세요.">
 								</div>
 
 
-								<!--___password나오는 부분 -->
+								<!--비밀번호 -->
 								<div class="form-group">
 									비밀번호<input type="password" name='pw' class="form-control"
 										placeholder="6자리를 입력하세요.">
 								</div>
 
 
-
-								<!--___이름 나오는 부분-->
+								<!--이름 -->
 								<div class="form-group">
 									이름<input type="text" name='pname' class="form-control"
 										placeholder="이름을 입력하세요.">
 								</div>
 
 
-
-								<!--___생년월일 나오는 부분-->
+								<!--생년월일/날짜 폼을 썼음 -->
 								<div class="form-group">
 									생년월일
 									<div class="input-group date" data-provide="datepicker">
 										<input type="text" name='birth' class="form-control"
-										placeholder="생년월일을 입력하세요.">
-									    <span class="input-group-addon">
-										<i class="glyphicon glyphicon-calendar"></i>
+											placeholder="생년월일을 입력하세요."> <span
+											class="input-group-addon"> <i
+											class="glyphicon glyphicon-calendar"></i>
 										</span>
 									</div>
 								</div>
 
 
-								<!--___이메일 나오는 부분-->
+								<!--이메일 -->
 								<div class="form-group has-feedback">
 									이메일<input type="text" name="email" class="form-control"
 										placeholder="이메일을 입력하세요. 예) iampeel@naver.com" /> <span
 										class="glyphicon  form-control-feedback"></span>
 								</div>
 
-								<!--___이메일 인증 버튼  -->
+
+								<!--이메일 인증  -->
 								<a href="register.html" class="text-center">이메일 인증하기</a>
 
+
+								<!--가입하기 버튼인데 우측에 붙이고 싶어서 이렇게 설정했음  -->
 								<div class="row">
-
 									<div class="col-xs-8"></div>
-
-									<!--___가입하기 버튼 -->
 									<div class="col-xs-4">
 										<button type="submit" class="btn btn-primary">가입하기</button>
 									</div>
-
 								</div>
 
-
 							</div>
+							<!--//class="box-body" 뭔지 모르겠지만 box-body를 빼면 전체 틀이 약간 구려짐   -->
 
 						</form>
 
 
 					</div>
-					<!--//___join_person  -->
+					<!--//id="join_person" 개인회원 내용 -->
+					<!--_____________________개인 회원 끝___________________________  -->
 
 
 
-
-
-
-					<!--___join_company  -->
+					<!--_____________________기업 회원 시작___________________________  -->
+					<!--개인회원 내용  -->
 					<div id="join_company" class="tab-pane fade">
-						<form action="/user/loginPost" method="post">
+						<form role="form" action="joinperson" method="post">
 
-							<!--___id나오는 부분-->
-							<div class="form-group has-feedback">
-								아이디<input type="text" name="uid" class="form-control"
-									placeholder="4~10자리를 입력하세요." /> <span
-									class="glyphicon  form-control-feedback"></span>
-							</div>
+							<!--뭔지 모르겠지만 box-body를 빼면 전체 틀이 약간 구려짐  -->
+							<div class="box-body">
 
-							<!--___password나오는 부분 -->
-							<div class="form-group has-feedback">
-								비밀번호<input type="password" name="upw" class="form-control"
-									placeholder="6자리를 입력하세요." />
-								<!--★ glyphicon-lock 자물쇠 그림  -->
-								<span class="glyphicon form-control-feedback"></span>
-							</div>
-
-
-							<!--___회사명 나오는 부분-->
-							<div class="form-group has-feedback">
-								회사명<input type="text" name="uid" class="form-control"
-									placeholder="회사명을 입력하세요." /> <span
-									class="glyphicon  form-control-feedback"></span>
-							</div>
-
-
-							<!--___담당자 이름 나오는 부분-->
-							<div class="form-group has-feedback">
-								담당자 이름<input type="text" name="uid" class="form-control"
-									placeholder="담당자 이름을 입력하세요." /> <span
-									class="glyphicon  form-control-feedback"></span>
-							</div>
-
-
-							<!--___이메일 나오는 부분-->
-							<div class="form-group has-feedback">
-								이메일<input type="text" name="uid" class="form-control"
-									placeholder="이메일을 입력하세요. 예) iampeel@naver.com" /> <span
-									class="glyphicon  form-control-feedback"></span>
-							</div>
-
-
-							<!--___이메일 인증 버튼  -->
-							<div>
-								<a href="register.html" class="text-center">이메일 인증하기</a>
-							</div>
-
-
-							<!--___사업자 등록 번호 나오는 부분-->
-							<br>
-							<div class="form-group has-feedback">
-								사업자 등록번호<input type="text" name="uid" class="form-control"
-									placeholder="'-'없이 숫자만 입력하세요" /> <span
-									class="glyphicon  form-control-feedback"></span>
-							</div>
-
-
-							<!--___사업자 등록번호 인증 버튼  -->
-							<div>
-								<a href="register.html" class="text-center">사업자 등록번호 인증하기</a>
-							</div>
-
-
-
-
-							<div class="row">
-
-								<div class="col-xs-8"></div>
-
-								<!--___가입하기 버튼 -->
-								<div class="col-xs-4">
-									<button type="submit"
-										class="btn btn-primary btn-block btn-flat">가입하기</button>
+								<!--아이디 -->
+								<div class="form-group">
+									회사 아이디<input type="text" name='id' class="form-control"
+										placeholder="4~10자리를 입력하세요.">
 								</div>
-								<!--//___가입하기 버튼 -->
+
+
+								<!--비밀번호 -->
+								<div class="form-group">
+									비밀번호<input type="password" name='pw' class="form-control"
+										placeholder="6자리를 입력하세요.">
+								</div>
+								
+								
+								<!--회사명 -->
+								<div class="form-group">
+									회사명<input type="text" name='cname' class="form-control"
+										placeholder="회사명을 입력하세요.">
+								</div>
+
+
+								<!--담당자 이름 -->
+								<div class="form-group">
+									담당자 이름<input type="text" name='pname' class="form-control"
+										placeholder="담당자 이름을 입력하세요.">
+								</div>
+
+
+								<!--담당자 이메일 -->
+								<div class="form-group has-feedback">
+									담당자 이메일<input type="text" name="email" class="form-control"
+										placeholder="담당자 이메일을 입력하세요. 예) iampeel@naver.com" /> <span
+										class="glyphicon  form-control-feedback"></span>
+								</div>
+
+
+								<!--이메일 인증  -->
+								<a href="" class="text-center">이메일 인증하기</a>
+
+								<br>
+								<br>
+								
+								<!--사업자 등록번호 -->
+								<div class="form-group">
+									사업자 등록번호<input type="text" name='registnum' class="form-control"
+										placeholder="띄워쓰기 없이 숫자만 연속으로 입력하세요.">
+								</div>
+
+
+								<!--사업자 등록번호 인증  -->
+								<a href="" class="text-center">사업자 등록번호 인증하기</a>
+
+
+								<!--가입하기 버튼인데 우측에 붙이고 싶어서 이렇게 설정했음  -->
+								<div class="row">
+									<div class="col-xs-8"></div>
+									<div class="col-xs-4">
+										<button type="submit" class="btn btn-primary">가입하기</button>
+									</div>
+								</div>
+
 
 							</div>
+							<!--//class="box-body" 뭔지 모르겠지만 box-body를 빼면 전체 틀이 약간 구려짐   -->
 
 						</form>
 
 
-
-
-
 					</div>
-					<!--//___join_company  -->
+					<!--//id="join_person" 개인회원 내용 -->
+
+
+					
 
 				</div>
-				<!--//___tab-content  -->
+				<!--//class="tab-content" 모달 안에 들어가는 내용 -->
 
 			</div>
-			<!--//___join-box-body -->
+			<!--//class="login-box-body col-xs-8" col-xs-8을 써서 모달 가로 폭을 조정했음-->
 
-		</div>
-		<!--//___modal-dialog  -->
+	    </div>
+		<!--//class="modal-dialog" 뭔지 모르겠지만 없애면 왼쪽에 붙고, 가로폭도 조절이 안됨  -->
 
 	</div>
-	<!--//___modal fade  -->
-	<!--//______회원가입 폼  -->
+	<!--//class="modal fade" 회원가입 모달 끝 -->
+
 
 
 
@@ -284,7 +347,7 @@
 	<!-- Bootstrap 3.3.2 JS -->
 	<!-- 	<script src="/resources/bootstrap/js/bootstrap.min.js"
 		type="text/javascript"></script> -->
-	-->
+	
 
 
 	<!-- FastClick -->
@@ -301,7 +364,7 @@
  -->
 
 
-	<!--___회원가입 모달  -->
+	<!--회원가입 모달  -->
 	<script>
 		$(document).ready(function() {
 			$("#myBtn_join").click(function() {
@@ -311,7 +374,30 @@
 	</script>
 
 
-	<!--______________________________________________________________________  -->
+	<!--날짜입력 모달 관련내용  -->
+	<script type='text/javascript'>
+		$(function() {
+			$('.input-group.date').datepicker({
+				calendarWeeks : false,
+				todayHighlight : true,
+				autoclose : true,
+				format : "yyyy/mm/dd",
+				language : "kr"
+			});
+		});
+	</script>
+
+
+	<link rel="stylesheet" type="text/css"
+		href="/resources/rpjt/datepicker/datepicker3.css" />
+	<script type="text/javascript"
+		src="/resources/rpjt/datepicker/bootstrap-datepicker.js"></script>
+	<script type="text/javascript"
+		src="/resources/rpjt/datepicker/bootstrap-datepicker.kr.js"></script>
+	<!--//날짜입력 모달 관련내용  -->
+
+
+	<!--//여기까지가 내가 수정한 부분  -->
 
 
 
