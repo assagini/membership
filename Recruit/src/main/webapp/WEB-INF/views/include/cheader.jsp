@@ -69,8 +69,10 @@
 					<!--___2.버튼추가  -->
 					<li id="myBtn_join"><a href="#"> <span class="glyphicon glyphicon-user"></span>
 							회원가입
-					<li><a href="#"> <span class="glyphicon glyphicon-log-in"></span>
+							
+					<li id="myBtn_login"><a href="#"> <span class="glyphicon glyphicon-log-in"></span>
 							로그인
+
 					</a></li>
 					<!--//___2.  -->
 
@@ -150,6 +152,155 @@
 	
 	
 	
+		<!--__________________________로그인 폼_______________________________________  -->
+	<!--___modal fade  -->
+	<div class="modal fade" id="modal_login" role="dialog">
+		<div class="modal-dialog">
+			<div class="login-box-body col-xs-8">
+
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#login_person">개인회원</a></li>
+					<li><a data-toggle="tab" href="#login_company">기업회원</a></li>
+				</ul>
+
+				<br>
+
+				<div class="tab-content">
+
+					<!--___Login_Person  -->
+					<div id="login_person" class="tab-pane fade in active">
+						<form role="form" action="loginperson" method="post">
+
+							<!--___id나오는 부분-->
+							<div class="form-group has-feedback">
+								<input type="text" name="uid" class="form-control"
+									placeholder="ID 개인 회원 로그인" />
+								<!--★ glyphicon-envelope 메일그림  -->
+								<span class="glyphicon  form-control-feedback"></span>
+							</div>
+
+							<!--___password나오는 부분 -->
+							<div class="form-group has-feedback">
+								<input type="password" name="upw" class="form-control"
+									placeholder="Password" />
+								<!--★ glyphicon-lock 자물쇠 그림  -->
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+
+							<!--___기억하기, 로그인 /그 줄에 로그인 버튼까지 있어서 row -->
+							<div class="row">
+								<!--___기억하기 체크버튼  -->
+								<div class="col-xs-8">
+									<div class="checkbox icheck">
+										<label> <input type="checkbox" name="useCookie">
+											기억하기
+										</label>
+									</div>
+								</div>
+								<!--//___기억하기 체크버튼  -->
+
+								<!--___로그인 버튼 -->
+								<div class="col-xs-4">
+									<button type="submit"
+										class="btn btn-primary btn-block btn-flat">로그인</button>
+								</div>
+								<!--//___로그인 버튼 -->
+
+							</div>
+							<!--//___기억하기, 로그인 -->
+
+						</form>
+
+						<a href="#">아이디를 잊어버렸어요</a> <br> <a href="#">패스워드를 잊어버렸어요</a>
+
+
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					</div>
+					<!--//___login_person  -->
+
+
+					<!--___login_company  -->
+					<div id="login_company" class="tab-pane fade">
+						<form role="form" action="logincompany" method="post">
+
+							<!--___id나오는 부분-->
+							<div class="form-group has-feedback">
+								<input type="text" name="uid" class="form-control"
+									placeholder="ID 기업회원 로그인" />
+								<!--glyphicon-envelope 메일그림  -->
+								<span class="glyphicon  form-control-feedback"></span>
+							</div>
+
+							<!--___password나오는 부분 -->
+							<div class="form-group has-feedback">
+								<input type="password" name="upw" class="form-control"
+									placeholder="Password" />
+								<!--glyphicon-lock 자물쇠 그림  -->
+								<span class="glyphicon form-control-feedback"></span>
+							</div>
+
+							<!--___기억하기, 로그인 /그 줄에 로그인 버튼까지 있어서 row -->
+							<div class="row">
+								<!--___기억하기 체크버튼  -->
+								<div class="col-xs-8">
+									<div class="checkbox icheck">
+										<label> <input type="checkbox" name="useCookie">
+											기억하기
+										</label>
+									</div>
+								</div>
+								<!--//___기억하기 체크버튼  -->
+
+								<!--___로그인 버튼 -->
+								<div class="col-xs-4">
+									<button type="submit"
+										class="btn btn-primary btn-block btn-flat">로그인</button>
+								</div>
+								<!--//___로그인 버튼 -->
+							</div>
+							<!-- //기억하기,로그인 -->
+
+						</form>
+
+						<a href="#">아이디를 잊어버렸어요</a> <br> <a href="#">패스워드를 잊어버렸어요</a>
+
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+					</div>
+					<!--//___login_company  -->
+
+				</div>
+				<!--//___tab-content  -->
+
+			</div>
+			<!--//___login-box-body -->
+
+		</div>
+		<!--//___modal-dialog  -->
+
+	</div>
+	<!--//___modal fade  -->
+	<!--//______로그인 폼  -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	<!--여기 써 있는 id값이 맨 밑에 자바 스크립트 부분에서 사용됨/ 회원가입 모달 시작 -->
 	<div class="modal fade" id="modal_join" role="dialog">
@@ -174,6 +325,8 @@
 					<!--_____________________개인 회원 시작 _____________________ -->
 					<!--개인회원 내용  -->
 					<div id="join_person" class="tab-pane fade in active">
+					
+						<!--action속성값이 rController랑 연결되는 거 같음  -->
 						<form role="form" action="joinperson" method="post">
 
 							<!--뭔지 모르겠지만 box-body를 빼면 전체 틀이 약간 구려짐  -->
@@ -363,6 +516,21 @@
 	<!-- 	<script src="/resources/dist/js/demo.js" type="text/javascript"></script>
 
  -->
+
+
+	<!--___로그인 모달  -->
+	<script>
+		$(document).ready(function() {
+			$("#myBtn_login").click(function() {
+				$("#modal_login").modal();
+			});
+		});
+	</script>
+
+
+
+
+
 
 
 	<!--회원가입 모달  -->
