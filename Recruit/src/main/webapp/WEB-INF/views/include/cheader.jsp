@@ -125,10 +125,17 @@
 								</div>
 
 
+
 								<!--___생년월일 나오는 부분-->
 								<div class="form-group">
-									생년월일<input type="text" name='birth' class="form-control"
-										placeholder="생년월일 폼 적용">
+									생년월일
+									<div class="input-group date" data-provide="datepicker">
+										<input type="text" name='birth' class="form-control"
+										placeholder="생년월일을 입력하세요.">
+									    <span class="input-group-addon">
+										<i class="glyphicon glyphicon-calendar"></i>
+										</span>
+									</div>
 								</div>
 
 
