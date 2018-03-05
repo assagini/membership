@@ -96,17 +96,4 @@ public class rController {
 	}
 	
 	
-/*	//내가 짜본거
-	@RequestMapping(value = "/loginperson", method = RequestMethod.POST)
-	public String loginPersonPost(BoardVO board, RedirectAttributes rttr) throws Exception {
-	    logger.info("regist post ...........");
-	    logger.info(board.toString());
-	    System.out.println("1");
-	    service.regist(board);
-	    System.out.println("2");
-
-	    rttr.addFlashAttribute("msg", "success");
-	    return "redirect:/rpjt/index";
-	}
-	*/
 }
